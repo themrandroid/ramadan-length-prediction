@@ -26,6 +26,12 @@ This project uses historical Hijri and Gregorian calendar data to build a machin
 - Deploy as a small web app or automation bot
 - Build a real-time version using Islamic calendar APIs
 
+## Author
+
+**Muhammed Abdulrasheed** – Aspiring Data Scientist  
+If you enjoyed this project, check out my other work: [Ramadan Length Prediction (1940–2024)](https://github.com/themrandroid/rainfall-prediction.git)
+
+---
 ## License
 
 This project is licensed under the MIT License.
