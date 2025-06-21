@@ -29,7 +29,7 @@ This project uses historical Hijri and Gregorian calendar data to build a machin
 ## Author
 
 **Muhammed Abdulrasheed** – Aspiring Data Scientist  
-If you enjoyed this project, check out my other work: [Ramadan Length Prediction (1940–2024)](https://github.com/themrandroid/rainfall-prediction.git)
+If you enjoyed this project, check out my other work: [Rainfall Prediction using Weather Data](https://github.com/themrandroid/rainfall-prediction.git)
 
 ---
 ## License
