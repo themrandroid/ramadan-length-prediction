@@ -4,6 +4,7 @@ A reproducible data-science project that uses historical Hijri and Gregorian cal
 
 
 Project overview
+
 This repository demonstrates a complete machine-learning pipeline for a binary classification problem: predicting Ramadan length (29 vs 30 days) using historical calendar features (start month/day, Sha'ban length, and year). The notebook contains scraping code for data collection and multiple model experiments; the best-performing, simplest model (Logistic Regression) was chosen for final predictions.
 
 Key results
@@ -60,4 +61,4 @@ License
 This project is licensed under the MIT License. See the repository for full terms.
 
 Author
-Muhammed Abdulrasheed — contact via the repository profile.
+Muhammed Abdulrasheed
