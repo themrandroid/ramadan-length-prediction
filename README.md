@@ -37,7 +37,7 @@ Run
 - The notebook performs entire pipeline and saves/reads the CSV at [data/Ramadan_Length_Prediction_data.csv](data/Ramadan_Length_Prediction_data.csv).
 
 Notable implementation details (symbols referenced in the notebook)
-- main dataframe: [`df`](ramadan_days_predictor.ipynb) — merged and cleaned dataset used for modeling.
+- main dataframe: [`df`](ramadan_days_predictor.ipynb); merged and cleaned dataset used for modeling.
 - trained logistic model: [`logistic_regression`](ramadan_days_predictor.ipynb); final selected classifier.
 - scaled train/test arrays: [`X_train_scaled`](ramadan_days_predictor.ipynb), [`X_test_scaled`](ramadan_days_predictor.ipynb).
 - example prediction input: [`prediction_df`](ramadan_days_predictor.ipynb); a sample row used to demonstrate a 2025 prediction.
@@ -61,4 +61,5 @@ License
 This project is licensed under the MIT License. See the repository for full terms.
 
 Author
+
 Muhammed Abdulrasheed
