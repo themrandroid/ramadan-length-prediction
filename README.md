@@ -14,7 +14,7 @@ Key results
 Dataset
 - Primary CSV: [data/Ramadan_Length_Prediction_data.csv](data/Ramadan_Length_Prediction_data.csv) — historical records from 1940 to 2024 (Hijri Year, Gregorian Year, Ramadan start month/day, Sha'ban length, Ramadan length).
 
-How it works (high level)
+How it works
 1. Data collection: scrape dates and month lengths from Wikipedia and hijri.habibur.com.
 2. Cleaning: parse and merge scraped tables, convert month lengths to numeric, filter year range.
 3. Features: Start_Month, Start_Day, Year, Sha'ban_Length (Hijri_Year dropped to avoid multicollinearity).
