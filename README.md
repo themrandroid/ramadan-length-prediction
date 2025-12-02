@@ -13,7 +13,7 @@ Key results
 - Confusion matrix and model comparisons are recorded in the main notebook.
 
 Dataset
-- Primary CSV: [data/Ramadan_Length_Prediction_data.csv](data/Ramadan_Length_Prediction_data.csv) — historical records from 1940 to 2024 (Hijri Year, Gregorian Year, Ramadan start month/day, Sha'ban length, Ramadan length).
+- Primary CSV: [data/Ramadan_Length_Prediction_data.csv](data/Ramadan_Length_Prediction_data.csv) : historical records from 1940 to 2024 (Hijri Year, Gregorian Year, Ramadan start month/day, Sha'ban length, Ramadan length).
 
 How it works
 1. Data collection: scrape dates and month lengths from Wikipedia and hijri.habibur.com.
@@ -38,14 +38,14 @@ Run
 
 Notable implementation details (symbols referenced in the notebook)
 - main dataframe: [`df`](ramadan_days_predictor.ipynb) — merged and cleaned dataset used for modeling.
-- trained logistic model: [`logistic_regression`](ramadan_days_predictor.ipynb) — final selected classifier.
+- trained logistic model: [`logistic_regression`](ramadan_days_predictor.ipynb); final selected classifier.
 - scaled train/test arrays: [`X_train_scaled`](ramadan_days_predictor.ipynb), [`X_test_scaled`](ramadan_days_predictor.ipynb).
-- example prediction input: [`prediction_df`](ramadan_days_predictor.ipynb) — a sample row used to demonstrate a 2025 prediction.
+- example prediction input: [`prediction_df`](ramadan_days_predictor.ipynb); a sample row used to demonstrate a 2025 prediction.
 
 File structure
-- [ramadan_days_predictor.ipynb](ramadan_days_predictor.ipynb) — primary Jupyter notebook with all code, EDA, modeling, and results.
-- [data/Ramadan_Length_Prediction_data.csv](data/Ramadan_Length_Prediction_data.csv) — processed dataset used by the notebook.
-- [README.md](README.md) — this file.
+- [ramadan_days_predictor.ipynb](ramadan_days_predictor.ipynb); primary Jupyter notebook with all code, EDA, modeling, and results.
+- [data/Ramadan_Length_Prediction_data.csv](data/Ramadan_Length_Prediction_data.csv); processed dataset used by the notebook.
+- [README.md](README.md); this file.
 
 Limitations
 - Small dataset (≈ 85 observations) limits model generalization.
