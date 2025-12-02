@@ -1,37 +1,63 @@
-# Predicting the Length of Ramadan using Historical Data (1940–2024)
+# Predicting the Length of Ramadan (1940–2024)
 
-This project uses historical Hijri and Gregorian calendar data to build a machine learning model that predicts whether Ramadan will last **29 or 30 days**.
+A reproducible data-science project that uses historical Hijri and Gregorian calendar data to predict whether a given Ramadan will last 29 or 30 days. The project includes data collection (web scraping), cleaning, exploratory analysis, feature engineering, and model evaluation. The final deliverable is a trained classifier (Logistic Regression selected) and a small prediction routine.
 
-## Project Highlights
 
-- Data scraped from [Wikipedia](https://en.wikipedia.org/wiki/Ramadan) and [Hijri.Habibur](https://hijri.habibur.com)
-- Years covered: 1940–2024
-- Full pipeline: Data Collection, Cleaning, EDA, Feature Engineering, Modeling, and Real-time Prediction
-- Best model: **Logistic Regression** (Accuracy: 67%, F1 Score: 70%, ROC-AUC: 67%)
-- Real-time prediction function that formats output clearly
+Project overview
+This repository demonstrates a complete machine-learning pipeline for a binary classification problem: predicting Ramadan length (29 vs 30 days) using historical calendar features (start month/day, Sha'ban length, and year). The notebook contains scraping code for data collection and multiple model experiments; the best-performing, simplest model (Logistic Regression) was chosen for final predictions.
 
-## Technologies Used
+Key results
+- Best model: Logistic Regression
+- Reported evaluation (notebook): Accuracy ≈ 61%, F1 ≈ 63%, ROC-AUC ≈ 61%
+- Confusion matrix and model comparisons are recorded in the main notebook.
 
-- Python (Pandas, Matplotlib, Seaborn, Scikit-learn, XGBoost)
-- Jupyter Notebook
-- Web scraping: `requests`, `BeautifulSoup`
+Dataset
+- Primary CSV: [data/Ramadan_Length_Prediction_data.csv](data/Ramadan_Length_Prediction_data.csv) — historical records from 1940 to 2024 (Hijri Year, Gregorian Year, Ramadan start month/day, Sha'ban length, Ramadan length).
 
-## Structure
+How it works (high level)
+1. Data collection: scrape dates and month lengths from Wikipedia and hijri.habibur.com.
+2. Cleaning: parse and merge scraped tables, convert month lengths to numeric, filter year range.
+3. Features: Start_Month, Start_Day, Year, Sha'ban_Length (Hijri_Year dropped to avoid multicollinearity).
+4. Target encoding: Ramadan_Length encoded as binary (1 => 29 days, 0 => 30 days).
+5. Modeling: train/test split, scale features, train several classifiers (Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, XGBoost).
+6. Evaluation: accuracy, F1, ROC-AUC, confusion matrix. Logistic Regression selected based on balanced performance.
 
-- `ramadan_days_predictor.ipynb`: Main notebook
-- `data/`: Raw CSV file scraped
+Reproducing the analysis
+Prerequisites
+- Python 3.8+; recommended packages: pandas, numpy, scikit-learn, matplotlib, seaborn, xgboost, requests, beautifulsoup4
 
-## Future Plans
+Install (example)
+```
+pip install pandas numpy scikit-learn matplotlib seaborn xgboost requests beautifulsoup4
+```
 
-- Deploy as a small web app or automation bot
-- Build a real-time version using Islamic calendar APIs
+Run
+- Open and run the notebook: [ramadan_days_predictor.ipynb](ramadan_days_predictor.ipynb) in Jupyter or VSCode.
+- The notebook performs entire pipeline and saves/reads the CSV at [data/Ramadan_Length_Prediction_data.csv](data/Ramadan_Length_Prediction_data.csv).
 
-## Author
+Notable implementation details (symbols referenced in the notebook)
+- main dataframe: [`df`](ramadan_days_predictor.ipynb) — merged and cleaned dataset used for modeling.
+- trained logistic model: [`logistic_regression`](ramadan_days_predictor.ipynb) — final selected classifier.
+- scaled train/test arrays: [`X_train_scaled`](ramadan_days_predictor.ipynb), [`X_test_scaled`](ramadan_days_predictor.ipynb).
+- example prediction input: [`prediction_df`](ramadan_days_predictor.ipynb) — a sample row used to demonstrate a 2025 prediction.
 
-**Muhammed Abdulrasheed** – Aspiring Data Scientist  
-If you enjoyed this project, check out my other work: [Rainfall Prediction using Weather Data](https://github.com/themrandroid/rainfall-prediction.git)
+File structure
+- [ramadan_days_predictor.ipynb](ramadan_days_predictor.ipynb) — primary Jupyter notebook with all code, EDA, modeling, and results.
+- [data/Ramadan_Length_Prediction_data.csv](data/Ramadan_Length_Prediction_data.csv) — processed dataset used by the notebook.
+- [README.md](README.md) — this file.
 
----
-## License
+Limitations
+- Small dataset (≈ 85 observations) limits model generalization.
+- Dataset contains rare anomalies (years with two Ramadans) which can affect some model behaviors.
+- The model uses historical calendar patterns only; it does not ingest live astronomical data or regional moon-sighting reports.
 
-This project is licensed under the MIT License.
+Future work
+- Integrate astronomical APIs to improve accuracy.
+- Add cross-validation and probabilistic calibration.
+- Deploy a lightweight web service that serves predictions and uncertainty estimates.
+
+License
+This project is licensed under the MIT License. See the repository for full terms.
+
+Author
+Muhammed Abdulrasheed — contact via the repository profile.
